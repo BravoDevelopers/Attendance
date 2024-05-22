@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table with Toggleable Cells</title>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    td {
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Date 1</th>
+            <th>Date 2</th>
+            <th>Date 3</th>
+            <th>Date 4</th>
+            <th>Date 5</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Person 1</td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td>Person 2</td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td>Person 3</td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td>Person 4</td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+        <tr>
+            <td>Person 5</td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+            <td class="cell"></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    // Function to toggle cell content
+    function toggleCellContent(cell) {
+        if (cell.innerHTML === 'P') {
+            cell.innerHTML = 'T';
+        } else if (cell.innerHTML === 'T') {
+            cell.innerHTML = 'E';
+        } else if (cell.innerHTML === 'E') {
+            cell.innerHTML = '';
+        } else {
+            cell.innerHTML = 'P';
+        }
+    }
+
+    // Add click event listeners to all cells
+    var cells = document.querySelectorAll('.cell');
+    cells.forEach(function(cell) {
+        cell.addEventListener('click', function() {
+            toggleCellContent(cell);
+        });
+    });
+</script>
+
+</body>
+</html>
